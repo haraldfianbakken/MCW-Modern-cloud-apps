@@ -715,6 +715,24 @@ In this exercise, the attendee will provision an Azure API app template using th
 
 6. Copy and paste the **URL** of the deployed **API App** for later use.
 
+7. Update PaymentGatewayFunctions.cs in your web project
+
+Locate the method called HttpCall and add the line between the comments below. The method should look something like:
+```
+    public string HttpCall(string NvpRequest)
+    {
+        string url = pEndPointURL;
+
+        string strPost = NvpRequest + "&" + buildCredentialsNVPString();
+        // Add this line   
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+        // End
+       HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(url)
+       // Remaining function code (leave this as it is..)
+```
+
+Redeploy/Republish the web project. 
+
 ### Task 5: Deploying the Offers Web API
 
 In this exercise, the attendee will provision an Azure API app template using the Microsoft Azure Portal. The attendee will then deploy the Offers Web API.
