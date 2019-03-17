@@ -2151,7 +2151,7 @@ The advantages of using Logic Apps include the following:
     CREATE PROCEDURE [dbo].[GetUnprocessedOrders]
     AS
     declare @returnCode int 
-    SELECT @returnCode = COUNT(*) FROM [dbo].[Orders] WHERE PaymentTransactionId is not null AND PaymentTransactionId <> '' AND Phone is not null AND Phone <> '' AND SMSOptIn = '1' AND SMSStatus is null
+    SELECT @returnCode = COUNT(*) FROM [dbo].[Orders] WHERE PaymentTransactionId is not null AND PaymentTransactionId <> '' AND Phone is not null AND Phone <> '' AND SMSOptIn = '1' AND (SMSStatus is NULL OR SMSStatus = '')
     return @returnCode
 
     GO
@@ -2168,7 +2168,7 @@ The advantages of using Logic Apps include the following:
     AS
     SELECT * FROM [dbo].[Orders] WHERE PaymentTransactionId is not null AND PaymentTransactionId <> '' AND Phone is not null AND Phone <> '' AND SMSOptIn = '1' AND SMSStatus is null;
 
-    UPDATE [dbo].[Orders] SET SMSStatus = 'sent' WHERE PaymentTransactionId is not null AND PaymentTransactionId <> '' AND Phone is not null AND Phone <> '' AND SMSOptIn = '1' AND SMSStatus is null;
+    UPDATE [dbo].[Orders] SET SMSStatus = 'sent' WHERE PaymentTransactionId is not null AND PaymentTransactionId <> '' AND Phone is not null AND Phone <> '' AND SMSOptIn = '1' AND (SMSStatus is NULL OR SMSStatus = '');
     ```
 
 6.  Click on **Execute** in the toolbar, or press the F5 key.
