@@ -313,7 +313,7 @@ In this exercise, you will provision a website via the Azure **Web App + SQL** t
 
     ![In the App settings section for the App Service blade, the new entry for AzureQueueConnectionString is selected.](images/Hands-onlabstep-by-step-Moderncloudappsimages/media/image40.png "App settings section")
 
-6.  Locate **Connection Strings** below **Application Settings** in your Notepad file.
+6.  Locate **Connection Strings** section below **Application Settings**.
 
     ![The Connection Strings section for the App Service blade displays.](images/Hands-onlabstep-by-step-Moderncloudappsimages/media/image41.png "Connection Strings section")
 
@@ -321,7 +321,7 @@ In this exercise, you will provision a website via the Azure **Web App + SQL** t
 
     -  Name: **ContosoSportsLeague**
 
-    -  Value: **Enter the Connection String for the SQL Database just created**
+    -  Value: **Enter the Connection String for the SQL Database just created** from your Notepad file
 
     -  Type: **SQLAzure**
 
