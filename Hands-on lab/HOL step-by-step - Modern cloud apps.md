@@ -160,6 +160,8 @@ Contoso has asked you to create a proof of concept deployment in Microsoft Azure
 
 In this exercise, you will provision a website via the Azure **Web App + SQL** template using the Microsoft Azure Portal. You will then edit the necessary configuration files in the starter project and deploy the e-commerce website.
 
+***NB*** : Make sure you have downloaded and extracted the starter project (zip file) from the Before-hands-on-lab instructions.
+
 #### Subtask 1: Create the Web App and SQL database instance
 
 1.  Navigate to the Azure Management portal, [http://portal.azure.com](http://portal.azure.com/), using a new tab or instance and login with your lab-provided Azure credentials.
